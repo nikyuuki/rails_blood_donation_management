@@ -1,0 +1,28 @@
+<%= form_with(model: bagblood) do |form| %>
+  <% if bagblood.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(bagblood.errors.count, "error") %> prohibited this bagblood from being saved:</h2>
+
+      <ul>
+        <% bagblood.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<form>
+  <div class="form-group">
+    <%= form.label :volume, "Volume (ml)" %>
+    <%= form.number_field :volume, placeholder: "Enter Volume", class: "form-control" %>
+  </div> <br>
+   <div class="form-group">
+    <%= form.label :donor_id, "Select Donor" %>
+    <%= form.collection_select :donor_id, Donor.all, :id, :name, prompt: "Choose a Donor", class: "form-control" %>
+  </div> <br>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+</form>

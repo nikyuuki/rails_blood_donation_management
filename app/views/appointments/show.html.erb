@@ -1,0 +1,23 @@
+ <%= link_to render 'home/header'%> 
+
+<div class="custom-container">
+ 
+      <p class="lead"> Appointment</p>
+      <h1 class= "display-4"> ID :  <%= @appointment.id%> </h1>
+      <hr class="my-4">
+       <p>Donor: <%= @appointment.donor.present? ? @appointment.donor.name : 'No donor associated' %></p>
+      <p>BloodBag ID: <%= @appointment.bagblood.present? ? @appointment.bagblood.id : 'No bloodbag associated' %></p>
+      <p>Staff: <%= @appointment.staff.present? ? @appointment.staff.name : 'No Staff associated' %></p>
+      <p>Session :<%= @appointment.session%> </p>
+      <p>Date :<%= @appointment.schedule%> </p>
+      <p>Status: </p>
+      
+
+      <p> 
+        <div>
+            <%= link_to "Edit", edit_appointment_path(@appointment) , class: "btn btn-info"%>
+            <%= link_to "Back", appointments_path , class: "btn btn-info"%>
+            <%= button_to "Delete", @appointment, method: :delete , class: "btn btn-danger"%>
+        </div>
+    
+</div>

@@ -1,0 +1,33 @@
+ <%= link_to render 'home/header'%> 
+
+<div class="custom-container">
+  <h1 class="text-center">Welcome Admin</h1>
+    <br>
+    <br>
+  <div class="row text-center">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="fs-1 fw-bold lh-sm mb-0"><%= @total_donors %></h5>
+          <p class="text-uppercase lh-sm mb-0">Donors</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="fs-1 fw-bold lh-sm mb-0"><%= @total_appointments %> </h5>
+          <p class="text-uppercase lh-sm mb-0">Appointments</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="fs-1 fw-bold lh-sm mb-0"><%= @total_bagbloods %> </h5>
+          <p class="text-uppercase lh-sm mb-0">Blood  bag</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

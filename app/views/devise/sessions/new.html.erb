@@ -1,0 +1,39 @@
+  <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white border-bottom border-danger fixed-top">
+    <div class="container-fluid">
+
+      <!-- Brand -->
+      <%= link_to home_index_path, class: "navbar-brand" do %>
+        <h1>Love Blood</h1>
+      <% end %>
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+<div class="custom-container">
+    <h2>Log in</h2>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field form-group"> <br>
+        <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email", autocomplete: "email" %>
+      </div>
+
+      <div class="field form-group"> <br>
+        <%= f.password_field :password, class: "form-control" ,placeholder: "Password",  autocomplete: "new-password" %>
+      </div> <br>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end %>
+
+      <div class="d-flex gap-3">
+        <%= f.submit "Submit", class: "btn btn-dark text-uppercase fs-6 rounded-pill px-4 py-3 mt-3" %>
+        
+        <%= link_to new_admin_registration_path, class: "btn btn-dark text-uppercase fs-6 rounded-pill px-4 py-3 mt-3" do %>
+          <i class="fas fa-lock fa-fw me-1"></i>
+          <span>Sign up</span>
+        <% end %>
+      </div>
+    <%end%>
+</div>

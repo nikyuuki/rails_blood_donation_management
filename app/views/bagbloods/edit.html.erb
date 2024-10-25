@@ -1,0 +1,15 @@
+ <%= link_to render 'home/header'%> 
+
+<div style="width: 500px; background-color: white;" class= "p-5 m-4 ">
+
+  <% content_for :title, "Editing blood bag" %>
+
+  <h1>Editing blood bag</h1>
+
+  <%= render "form", bagblood: @bagblood %>
+
+   <div class= 'm-4'>
+    <%= link_to "Show this bagblood", @bagblood,  class: "btn btn-info" %> 
+    <%= link_to "Back to bagbloods", bagbloods_path,  class: "btn btn-info" %>
+  </div>
+</div>

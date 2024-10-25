@@ -1,0 +1,41 @@
+ <%= link_to render 'home/header'%> 
+<div class="custom-container">
+  <% content_for :title, "Bloodbags" %>
+  <h1 class= "pb-3">Bloodbags List</h1>
+  <%= link_to  "New bloodbag", new_bagblood_path, class: "btn btn-danger btn-block px-3 py-2 w-100" %>
+
+  <%= form_with url: bagbloods_path, method: :get, local: true, class: "search-form" do %>
+    <div class="input-group mb-3 pt-3" style="width: 300px; float: left;">
+      <%= text_field_tag :search, params[:search], placeholder: "Search bloodbag...", class: "form-control" %>
+    </div>
+  <% end %>
+
+ <% if @bagbloods.present? %>
+
+  <div id="bloodbags">
+    <table class="table">
+      <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Volume (ml)</th>
+            <th scope="col">Blood Type</th>
+            <th scope="col">Actions</th>
+          </tr>
+      </thead>
+      <% @bagbloods.each do |bagblood| %>
+          <tbody>
+              <%= render bagblood %> 
+                <td>
+                 <%= link_to "show", bagblood, class: "border border-success text-black rounded px-3 py-1 w-auto" %>
+               </td>
+          <% end %>
+        <% else %>
+          <tr>
+            <td colspan="6" class="text-center">No bagbloods found</td>
+          </tr>
+        <% end %>
+          </tbody>
+    </table>
+  </div>
+</div>
+

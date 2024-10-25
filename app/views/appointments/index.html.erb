@@ -1,0 +1,44 @@
+ <%= link_to render 'home/header'%> 
+   <% content_for :title, "Appointments" %>
+
+<div class="custom-container">
+  <h1 class= "pb-3">Appointments List</h1>
+    <%= link_to "Add New Appointment", new_appointment_path, class: "btn btn-danger btn-block px-3 py-2 w-100" %>
+  <br>
+
+  <%= form_with url: appointments_path, method: :get, local: true, class: "search-form" do %>
+    <div class="input-group mb-3 pt-3" style="width: 300px; float: left;">
+      <%= text_field_tag :search, params[:search], placeholder: "Search appointments...", class: "form-control" %>
+    </div>
+  <% end %>
+
+ <% if @appointments.present? %>
+  <div id="appointment">
+    <table class="table">
+      <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Session</th>
+            <th scope="col">Date</th>
+            <th scope="col">Donor</th>            
+            <th scope="col">BloodBag ID</th>
+            <th scope="col">Staff</th>
+            <th scope="col">Actions</th>
+          </tr>
+      </thead>
+      <% @appointments.each do |appointment| %>
+          <tbody>
+              <%= render appointment %> 
+                <td>
+                 <%= link_to "show", appointment, class: "border border-success text-black rounded px-3 py-1 w-auto" %>
+               </td>
+          <% end %>
+        <% else %>
+          <tr>
+            <td colspan="6" class="text-center">No appointment found</td>
+          </tr>
+        <% end %>
+          </tbody>
+    </table>
+  </div>
+</div>

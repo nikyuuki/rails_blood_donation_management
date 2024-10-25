@@ -1,0 +1,16 @@
+<%= link_to render 'home/header'%> 
+
+<% content_for :title, "Editing staff" %>
+<div class="custom-container">
+  <h1>Editing staff</h1>
+
+  <%= render "form", staff: @staff %>
+
+  <br>
+
+  <div>
+    <%= link_to "Show this staff", @staff, class: "btn btn-info"  %> |
+    <%= link_to "Back to staffs", staffs_path, class: "btn btn-info"  %>
+  </div>
+</div>
+

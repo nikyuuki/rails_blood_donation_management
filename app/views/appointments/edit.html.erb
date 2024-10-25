@@ -1,0 +1,15 @@
+ <%= link_to render 'home/header'%> 
+
+<div class="custom-container">
+    <% content_for :title, "Editing appointment" %>
+
+    <h1>Editing appointment</h1>
+
+    <%= render "form", appointment: @appointment %>
+
+    <br>
+    <div>
+      <%= link_to "Show this appointment", @appointment %> |
+      <%= link_to "Back to appointments", appointments_path %>
+    </div>
+</div>

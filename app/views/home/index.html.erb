@@ -1,0 +1,97 @@
+
+  <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white border-bottom border-danger fixed-top">
+    <div class="container-fluid">
+
+      <!-- Brand -->
+      <%= link_to home_index_path, class: "navbar-brand" do %>
+        <h1>Love Blood</h1>
+      <% end %>
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+
+ <div class = "bg-light row">
+
+   <section style="background-image: url('<%= asset_path('donating.png') %>'); background-repeat: no-repeat; background-size: cover;">
+      <div class="container-lg">
+        <div class="row">
+          <div class="col-lg-6 pt-5 mt-5">
+            <h2 class="display-1 ls-1"><span class="fw-bold text-danger">Donate</span>Blood Save <span class="fw-bold">3 Lives</span></h2>
+            <p class="fs-4">Make a changes.</p>
+            <div class="d-flex gap-3">
+              <%= link_to new_admin_registration_path, class: "btn btn-dark text-uppercase fs-6 rounded-pill px-4 py-3 mt-3" do %>
+                <i class="fas fa-lock fa-fw me-1"></i>
+                <span>Sign Up</span>
+              <% end %>
+              <%= link_to new_admin_session_path, class: "btn btn-dark text-uppercase fs-6 rounded-pill px-4 py-3 mt-3" do %>
+                <i class="fas fa-lock fa-fw me-1"></i>
+                <span>Log In</span>
+              <% end %>
+            </div>
+            <div class="row my-5">
+              <div class="col">
+                <div class="row text-dark">
+                  <div class="col-auto"><p class="fs-1 fw-bold lh-sm mb-0">14K +</p></div>
+                  <div class="col"><p class="text-uppercase lh-sm mb-0">Donations</p></div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="row text-dark">
+                  <div class="col-auto"><p class="fs-1 fw-bold lh-sm mb-0">8K +</p></div>
+                  <div class="col"><p class="text-uppercase lh-sm mb-0">Regular Donors</p></div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="row text-dark">
+                  <div class="col-auto"><p class="fs-1 fw-bold lh-sm mb-0">6K +</p></div>
+                  <div class="col"><p class="text-uppercase lh-sm mb-0">New Needs</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row row-cols-1 row-cols-sm-3 row-cols-lg-3 g-0 justify-content-center">
+          <div class="col">
+            <div class="card border-0 bg-dark rounded-0 p-4 text-light">
+              <div class="row">
+                <div class="col-md-3 text-center">
+                  <svg width="60" height="60"><use xlink:href="#fresh"></use></svg>
+                </div>
+                <div class="col-md-9">
+                  <div class="card-body p-0">
+                    <h5 class="text-light">Admin Log In</h5>
+                    <p class="card-text">Email: nikalyaa@gmail.com</p>
+                    <p class="card-text">Password: admin00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+    </section>
+
+
+        <div class ="p-4 bg-warning w-50 "> 
+            <br>
+            <h1 >Benefit of Blood Donation</h1>
+            <p class="text-light">1. Reducing the Risk of Heart Disease</p>
+            <p class="text-light">2. Lowering Blood Pressure</p>
+            <p class="text-light">3. Reducing Stress</p>
+            <p class="text-light">4. Save A Life</p>
+        </div>
+        
+        <div  class="border border-secondary p-4 w-50 text-danger text-center">
+            <h1 >IT'S WORLD</h1>
+            <h1>DONOR DAY!</h1>
+            <p>do a bit good for someone</p>
+            <p>donate blood, save a life in process</p>
+            <p>-----------</p>
+            <h3>JUNE 14. 2021 | 9 AM - 4 PM</h3>
+        </div>
+</div>
+
+
+

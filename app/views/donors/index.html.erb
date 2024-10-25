@@ -1,0 +1,51 @@
+ <%= link_to render 'home/header'%> 
+
+<div class="custom-container">
+  <% content_for :title, "Donors" %>
+  <h1 class= "pb-3">Donors List</h1>
+
+  <%= link_to "New Donor", new_donor_path, class: "btn btn-danger btn-block px-3 py-2 w-100" %>
+
+  <%= form_with url: donors_path, method: :get, local: true, class: "search-form" do %>
+    <div class="input-group mb-3 pt-3" style="width: 300px; float: left;">
+      <%= text_field_tag :search, params[:search], placeholder: "Search donors...", class: "form-control" %>
+    </div>
+  <% end %>
+
+ <% if @donors.present? %>
+  <div id="donors">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+          <th scope="col">IC Number</th>
+          <th scope="col">Blood Type</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+          <% @donors.each_with_index do |donor, index| %>
+            <tr>
+              <th scope="row"><%= index + 1 %></th>
+              <td><%= donor.name %></td>
+              <td><%= donor.email %></td>
+              <td><%= donor.phone %></td>
+              <td><%= donor.icnum %></td>
+              <td><%= donor.bloodtype %></td>
+              <td>
+                <%= link_to "Show", donor, class: "border border-success text-black rounded px-3 py-1 w-auto" %>
+              </td>
+            </tr>
+          <% end %>
+        <% else %>
+          <tr>
+            <td colspan="6" class="text-center">No donors found</td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

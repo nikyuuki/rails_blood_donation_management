@@ -1,0 +1,18 @@
+ <%= link_to render 'home/header'%> 
+
+<div class="custom-container">
+  
+      <p class="lead"> ID : <%= @donor.id%> </p>
+      <h1 class= "display-4"> <%= @donor.name%> </h1>
+      <hr class="my-4">
+      <p>Email :<%= @donor.email%> </p>
+      <p>Type of Blood :<%= @donor.bloodtype%> </p>
+      <p>Date of Birth :<%= @donor.phone%> </p>
+      <p> 
+        <div>
+            <%= link_to "Edit", edit_donor_path(@donor) , class: "btn btn-info"%>
+            <%= link_to "Back", donors_path , class: "btn btn-info"%>
+            <%= button_to "Delete", @donor, method: :delete , class: "btn btn-danger"%>
+        </div>
+    
+</div>

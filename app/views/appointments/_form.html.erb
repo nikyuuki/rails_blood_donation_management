@@ -1,0 +1,48 @@
+<%= form_with(model: appointment) do |form| %>
+  <% if appointment.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(appointment.errors.count, "error") %> prohibited this appointment from being saved:</h2>
+
+      <ul>
+        <% @appointment.errors do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+    <div class= "field form-group"><br>
+        <%= form.label :schedule, "Select Date to book appointment" %>
+      <%= form.date_field :schedule ,  class: "form-control", placeholder: "Select Date" %>
+    </div>
+
+     <div class="field form-group"> <br>
+      <%= form.label :session, "Select Your Session" %>
+       <%= form.select :session, options_for_select([["Session 1: 09.00 am - 11.30 am", 1], 
+                                                     ["Session 2: 01.00 pm - 4.00 pm", 2], 
+                                                     ["Session 3: 08.00 pm - 10.00 pm", 3]], 
+                                                     selected: @appointment.session), 
+                                                     { prompt: " Choose Session" }, 
+                                                     class: "form-select", aria: { label: "Choose Session" } %>
+     </div>
+
+
+  <div class="field form-group"> <br>
+    <%= form.collection_select :bagblood_id, Bagblood.all, :id, :id, { prompt: "Choose a BloodID" }, { class: "form-select", aria: { label: "Select Bagblood ID" } } %>
+  </div>
+<br> <br>
+   <div class="field form-group">
+    <%= form.collection_select :donor_id, Donor.all, :id, :name, { prompt: "Choose a Donor" }, { class: "form-select", aria: { label: "Select Donor Name" } } %>
+  </div> <br>
+<br>
+
+   <div class="field form-group">
+    <%= form.collection_select :staff_id, Staff.all, :id, :name, { prompt: "Choose a Staff" }, { class: "form-select", aria: { label: "Select Staff Name" } } %>
+  </div> <br>
+<br>
+
+    <div  class= "actions">
+      <%= form.submit class: 'btn btn-info'%>
+    </div>
+<% end %>

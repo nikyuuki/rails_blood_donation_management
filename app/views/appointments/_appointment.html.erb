@@ -1,0 +1,7 @@
+  <th><%= appointment.id %> </th>
+  <td><%= appointment.session %> </td>
+  <td> <%= appointment.schedule %> </td>
+  <td> <%= appointment.donor.name if appointment.donor.present? %></td>
+  <td> <%= appointment.bagblood.id if appointment.bagblood.present? %></td>
+  <td> <%= appointment.staff.name if appointment.staff.present? %></td>
+

@@ -1,0 +1,16 @@
+<%= link_to render 'home/header'%> 
+
+<div class="custom-container">
+  
+      <p class="lead"> ID : <%= @staff.id%> </p>
+      <h1 class= "display-4"> <%= @staff.name%> </h1>
+      <hr class="my-4">
+      <p>Role :<%= @staff.role%> </p>
+      <p> 
+        <div>
+            <%= link_to "Edit", edit_staff_path(@staff) , class: "btn btn-info"%>
+            <%= link_to "Back", staffs_path , class: "btn btn-info"%>
+            <%= button_to "Delete", @staff, method: :delete , class: "btn btn-danger"%>
+        </div>
+    
+</div>

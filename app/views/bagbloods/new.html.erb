@@ -1,0 +1,14 @@
+<% content_for :title, "New bagblood" %>
+ <%= link_to render 'home/header'%> 
+
+<div class="custom-container">
+  <h1>New bagblood</h1>
+
+  <%= render "form", bagblood: @bagblood %>
+
+  <br>
+
+  <div>
+    <%= link_to "Back to bagbloods", class: 'btn btn-info' %>
+  </div>
+</div>

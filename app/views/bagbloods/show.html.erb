@@ -1,0 +1,27 @@
+ <%= link_to render 'home/header'%> 
+<div id="bagbloods">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Liter</th>
+        <th scope="col">Volume (ML)</th>
+        <th scope="col">Actions</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @bagblood.id %></td>
+        <td><%= @bagblood.volume %></td>
+        <td><%= @bagblood.donor.bloodtype if @bagblood.donor.present? %></td>
+        <td><%= link_to "Edit", edit_bagblood_path(@bagblood), class: "btn btn-info" %></td>
+        <td><%= button_to "Destroy", @bagblood, method: :delete, class: "btn btn-danger" %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <%= link_to "Back to bloodbags", bagbloods_path, class: "btn btn-info" %>
+</div>
