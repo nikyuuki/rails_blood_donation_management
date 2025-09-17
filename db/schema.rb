@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_23_043918) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_23_041823) do
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -22,9 +22,9 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_23_043918) do
     t.integer "failed_attempts", default: 0
     t.string "unlock_token"
     t.datetime "locked_at"
+    t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "remember_created_at"
   end
 
   create_table "appointments", force: :cascade do |t|
@@ -50,7 +50,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_23_043918) do
   create_table "donors", force: :cascade do |t|
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
+    t.datetime "remember_created_atS"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
